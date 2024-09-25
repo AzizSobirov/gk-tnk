@@ -1,0 +1,24 @@
+@import "base/mixins";
+
+@include font-face("Nunito", 400);
+@include font-face("Nunito", 500);
+@include font-face("Nunito", 600);
+@include font-face("Nunito", 700);
+@include font-face("Nunito", 800);
+
+:root {
+  --primary: #0c89c5;
+  --primary-gradient: linear-gradient(136deg, #0478b9 0%, #0d8dc8 100%);
+  --secondary: #faa65b;
+  --secondary-hover: #f9a14e;
+  --text-color: #505357;
+  --bg-color: #fff;
+  --font-primary: "Nunito", sans-serif;
+  --transition-ease: 0.3s ease;
+  --transition-bezier: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@import "base/normalize";
+@import "ui/index";
+@import "components/index";
+@import "index";

@@ -1,0 +1,38 @@
+.swiper {
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  --btn-size: 24px;
+  --btn-offset: 0;
+
+  &-container {
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+
+  &-btn {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: block;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="19.9997" cy="19.9999" r="16.6667" fill="white" stroke="url(%23paint0_linear_240_4239)" stroke-width="1.5"/><path d="M17.5 13.3333C17.5 13.3333 22.5 18.2432 22.5 20C22.5 21.7568 17.5 26.6666 17.5 26.6666" stroke="url(%23paint1_linear_240_4239)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="paint0_linear_240_4239" x1="4.13301" y1="3.33325" x2="39.2455" y2="6.31724" gradientUnits="userSpaceOnUse"><stop stop-color="%230478B9"/><stop offset="1" stop-color="%230D8DC8"/></linearGradient><linearGradient id="paint1_linear_240_4239" x1="17.62" y1="13.3333" x2="22.9195" y2="13.5021" gradientUnits="userSpaceOnUse"><stop stop-color="%230478B9"/><stop offset="1" stop-color="%230D8DC8"/></linearGradient></defs></svg>')
+      no-repeat center/contain;
+    z-index: 2;
+
+    &.btn-prev {
+      left: var(--btn-offset);
+      transform: translate(0, -50%) rotate(180deg);
+    }
+
+    &.btn-next {
+      right: var(--btn-offset);
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.6;
+    }
+  }
+}

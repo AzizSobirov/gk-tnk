@@ -1,0 +1,4 @@
+.btn {
+  @include center;
+  transition: var(--transition-ease);
+}

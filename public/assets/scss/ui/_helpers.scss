@@ -1,0 +1,95 @@
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  --position: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--position);
+  }
+}
+
+.icon {
+  min-width: var(--icon-size, 24px);
+  width: var(--icon-size, 24px);
+  height: var(--icon-size, 24px);
+  display: block;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-h1 {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 120%;
+
+  @include media("xl") {
+    font-size: 45px;
+  }
+  @include media("sm") {
+    font-size: 25px;
+  }
+}
+
+.text-h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 120%;
+
+  @include media("xl") {
+    font-size: 30px;
+  }
+  @include media("sm") {
+    font-size: 25px;
+  }
+}
+
+.text-h3 {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  @include media("xl") {
+    font-size: 27px;
+  }
+  @include media("sm") {
+    font-size: 20px;
+  }
+}
+
+.text-h4 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+
+  @include media("xl") {
+    font-size: 25px;
+  }
+}
+
+.sm\:hidden {
+  @include media("641px", min-width) {
+    display: none;
+  }
+}
