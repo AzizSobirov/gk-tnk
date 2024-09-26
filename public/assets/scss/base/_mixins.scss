@@ -87,21 +87,21 @@ $breakpoints: (
   @font-face {
     font-family: "#{$font-family}";
     @if $weight == 200 {
-      src: url("../fonts/#{$font-family}-Thin.ttf") format("truetype");
+      src: url("../fonts/#{$font-family}-Thin.woff2") format("woff2");
     } @else if $weight == 300 {
-      src: url("../fonts/#{$font-family}-Light.ttf") format("truetype");
+      src: url("../fonts/#{$font-family}-Light.woff2") format("woff2");
     } @else if $weight == 400 {
-      src: url("../fonts/#{$font-family}-Regular.ttf") format("truetype");
+      src: url("../fonts/#{$font-family}-Regular.woff2") format("woff2");
     } @else if $weight == 500 {
-      src: url("../fonts/#{$font-family}-Medium.ttf") format("truetype");
+      src: url("../fonts/#{$font-family}-Medium.woff2") format("woff2");
     } @else if $weight == 600 {
-      src: url("../fonts/#{$font-family}-SemiBold.ttf") format("truetype");
+      src: url("../fonts/#{$font-family}-SemiBold.woff2") format("woff2");
     } @else if $weight == 700 {
-      src: url("../fonts/#{$font-family}-Bold.ttf") format("truetype");
+      src: url("../fonts/#{$font-family}-Bold.woff2") format("woff2");
     } @else if $weight == 800 {
-      src: url("../fonts/#{$font-family}-ExtraBold.ttf") format("truetype");
+      src: url("../fonts/#{$font-family}-ExtraBold.woff2") format("woff2");
     } @else if $weight == 900 {
-      src: url("../fonts/#{$font-family}-Black.ttf") format("truetype");
+      src: url("../fonts/#{$font-family}-Black.woff2") format("woff2");
     }
     font-weight: #{$weight};
     font-display: swap;

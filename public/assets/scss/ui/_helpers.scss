@@ -1,6 +1,9 @@
 .container {
   margin: 0 auto;
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
   width: 100%;
+  max-width: calc(var(--content-width) + var(--content-padding) * 2);
 }
 
 .bg-img {
@@ -38,10 +41,14 @@
   color: var(--primary);
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .text-h1 {
-  font-size: 64px;
-  font-weight: 800;
-  line-height: 120%;
+  font-size: 128px;
+  font-weight: 400;
+  font-family: var(--font-secondary);
 
   @include media("xl") {
     font-size: 45px;
@@ -52,9 +59,9 @@
 }
 
 .text-h2 {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 120%;
+  font-size: 96px;
+  font-weight: 400;
+  font-family: var(--font-secondary);
 
   @include media("xl") {
     font-size: 30px;
@@ -65,9 +72,9 @@
 }
 
 .text-h3 {
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 48px;
+  font-weight: 400;
+  font-family: var(--font-secondary);
 
   @include media("xl") {
     font-size: 27px;
@@ -77,16 +84,16 @@
   }
 }
 
-.text-h4 {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 120%;
-  letter-spacing: -0.02em;
+// .text-h4 {
+//   font-size: 32px;
+//   font-weight: 700;
+//   line-height: 120%;
+//   letter-spacing: -0.02em;
 
-  @include media("xl") {
-    font-size: 25px;
-  }
-}
+//   @include media("xl") {
+//     font-size: 25px;
+//   }
+// }
 
 .sm\:hidden {
   @include media("641px", min-width) {

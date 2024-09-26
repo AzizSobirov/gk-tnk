@@ -1,4 +1,30 @@
 /* Styles for the TheHeader component */
 .header {
-  // Styles 
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  transition: var(--transition-ease);
+  z-index: 10;
+
+  &__inner {
+    height: 100%;
+    @include flex-row(space-between, center, 85px);
+  }
+
+  &__menu {
+    margin-left: auto;
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+    }
+  }
+
+  &__socials {
+    @include flex-row(center, center, 20px);
+  }
 }

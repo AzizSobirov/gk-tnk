@@ -8,7 +8,7 @@ const _meta = {
   title: "Starter Kit",
   description: "The Site uses Aziz Sobirov's Starter Kit",
   author: "Aziz Sobirov",
-  color: "#100C09",
+  color: "#fff",
 };
 
 const { title = _meta.title, meta = _meta } = Astro.props as PageSEO;
@@ -33,7 +33,20 @@ const { title = _meta.title, meta = _meta } = Astro.props as PageSEO;
     <!-- Main -->
     <slot />
     <!-- TheFooter -->
-    <TheFooter />
+    <!-- <TheFooter /> -->
+    <!-- Background Lines -->
+    <div class="bg-lines">
+      <div class="line-1"></div>
+      <div class="line-2"></div>
+      <div class="line-3"></div>
+    </div>
     <slot name="footer" />
+
+    <!-- Scripts -->
+    <script src="./assets/js/gsap.min.js" is:inline></script>
+    <script src="./assets/js/ScrollTriger.min.js" is:inline></script>
+    <script src="./assets/js/MouseFollower.min.js" is:inline></script>
+    <script src="./assets/js/animations.js" is:inline></script>
+    <script src="./assets/js/app.js" is:inline></script>
   </body>
 </html>

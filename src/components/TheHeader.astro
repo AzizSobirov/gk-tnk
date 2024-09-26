@@ -1,9 +1,44 @@
 ---
-import { H2 } from "@ui";
+import { H2, Image, WpNav } from "@ui";
+import type { Nav } from "@types";
+
+const list: Nav[] = [
+  {
+    name: "Главная",
+    href: "/",
+  },
+  {
+    name: "О нас",
+    href: "/about",
+  },
+  {
+    name: "Услуги",
+    href: "/services",
+  },
+  {
+    name: "Портфолио",
+    href: "/portfolio",
+  },
+  {
+    name: "Контакты",
+    href: "/contacts",
+  },
+];
 ---
 
 <header class="header">
-  <div class="container">
-    <H2>TheHeader</H2>
+  <div class="header__inner container">
+    <a href="/" class="header__logo" title="logo">
+      <Image src="logo.svg" alt="logo" />
+    </a>
+
+    <nav class="header__menu">
+      <WpNav list={list} />
+    </nav>
+
+    <div class="header__socials">
+      <a class="underline" href="#" title="Telegram">Telegram</a>
+      <a class="underline" href="#" title="WhatsApp">WhatsApp</a>
+    </div>
   </div>
 </header>

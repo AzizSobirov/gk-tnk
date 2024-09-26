@@ -8,3 +8,9 @@ export interface PageSEO {
     color: string;
   };
 }
+
+export interface Nav {
+  name: string;
+  href: string;
+  children?: Nav[];
+}

@@ -1,12 +1,50 @@
 ---
 import App from "../layouts/App.astro";
-import { Button, Section, Image } from "@ui";
+import { H1, Button, Section, Image, Icon } from "@ui";
 ---
 
-<App title="Home Page">
+<App title="Главная">
   <main>
+    <!-- The Intro -->
     <Section name="intro" main>
+      <div class="intro__content">
+        <H1>
+          <div><span>ИНДИВИДУАЛЬНОЕ</span></div>
+          <div><span>СТРОИТЕЛЬСТВО</span></div>
+        </H1>
 
+        <figure class="intro__img">
+          <Image src="intro/1.png" />
+          <figcaption>
+            Ваш новый уровень комфорта. Здесь начнётся Ваша новая история.
+          </figcaption>
+        </figure>
+
+        <div class="intro__action">
+          <div
+            class="intro__action-btn"
+            data-modal="form"
+            role="button"
+            tabindex="0"
+            aria-label="Обсудим Ваш проект?"
+            data-cursor="link"
+          >
+            <Image src="icons/arrow-btn.svg" />
+            <span>Обсудим Ваш проект?</span>
+          </div>
+          <p class="intro__action-desc">
+            Индивидуальный подход к каждому клиенту. <br /> Решения под любой бюджет.
+          </p>
+        </div>
+      </div>
+
+      <Fragment slot="footer">
+        <div class="intro__video">
+          <video autoplay loop muted>
+            <source src="./assets/videos/1.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </Fragment>
     </Section>
   </main>
 </App>
