@@ -20,7 +20,7 @@
   width: 48px;
   height: 48px;
   transform: scale(0);
-  background: var(--primary);
+  background: var(--text-color);
   border-radius: 50%;
   transition:
     transform 0.25s ease-in-out,
@@ -45,7 +45,7 @@
 }
 
 .mf-cursor.-link:before {
-  background: var(--primary);
+  background: var(--text-color);
   transform: scale(1.8);
 }
 
@@ -55,7 +55,7 @@
 }
 
 .mf-cursor.-swipe:before {
-  background: var(--primary);
+  background: var(--text-color);
   transform: scale(1.8);
 }
 

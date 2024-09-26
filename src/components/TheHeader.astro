@@ -1,29 +1,5 @@
 ---
-import { H2, Image, WpNav } from "@ui";
-import type { Nav } from "@types";
-
-const list: Nav[] = [
-  {
-    name: "Главная",
-    href: "/",
-  },
-  {
-    name: "О нас",
-    href: "/about",
-  },
-  {
-    name: "Услуги",
-    href: "/services",
-  },
-  {
-    name: "Портфолио",
-    href: "/portfolio",
-  },
-  {
-    name: "Контакты",
-    href: "/contacts",
-  },
-];
+import { H2, Image } from "@ui";
 ---
 
 <header class="header">
@@ -33,12 +9,56 @@ const list: Nav[] = [
     </a>
 
     <nav class="header__menu">
-      <WpNav list={list} />
-    </nav>
+      <ul class="menu">
+        <li class="menu-item"><a href="/">Главная</a></li>
+        <li class="menu-item"><a href="/about">О нас</a></li>
+        <li class="menu-item menu-item-has-children">
+          <a href="/services">Услуги</a>
+          <ul class="sub-menu">
+            <li class="menu-item">
+              <span>Работы на участке</span>
+              <a href="#">Ландшафтный дизайн</a>
+              <a href="#">Разработка, вывоз и утилизация грунта</a>
+            </li>
+            <li class="menu-item">
+              <span>Исследования</span>
+              <a href="#">Геологические изыскания</a>
+              <a href="#">Расчет нагрузок на фундамент</a>
+            </li>
+            <li class="menu-item">
+              <span>Строительство</span>
+              <a href="#">Фундамент под ключ</a>
+              <a href="#">Возведение коробки под ключ</a>
+              <a href="#">Возведение дома под ключ</a>
+            </li>
+            <li class="menu-item">
+              <span>Коммуникации</span>
+              <a href="#">Газ под ключ</a>
+              <a href="#">Электроснабжение</a>
+              <a href="#">Водоснабжение</a>
+              <a href="#">Водоотведение и канализация</a>
+            </li>
+            <li class="menu-item">
+              <span>Интерьерные работы</span>
+              <a href="#">Предчистовая отделка (white box)</a>
+              <a href="#">Чистовая отделка</a>
+              <a href="#">Мебелирование</a>
+            </li>
+            <li class="menu-item">
+              <span>Другие услуги</span>
+              <a href="#">Проектирование домов</a>
+              <a href="#">Поставка материалов</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item"><a href="/portfolio">Портфолио</a></li>
+        <li class="menu-item"><a href="/contacts">Контакты</a></li>
+      </ul>
 
-    <div class="header__socials">
-      <a class="underline" href="#" title="Telegram">Telegram</a>
-      <a class="underline" href="#" title="WhatsApp">WhatsApp</a>
-    </div>
+      <div class="header__socials">
+        <a class="underline" href="#" title="Telegram">Telegram</a>
+        <a class="underline" href="#" title="WhatsApp">WhatsApp</a>
+      </div>
+    </nav>
   </div>
 </header>

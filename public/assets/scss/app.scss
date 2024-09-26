@@ -16,6 +16,12 @@
   --content-padding: 20px;
 }
 
+@include media("1380px") {
+  :root {
+    --content-width: 1180px;
+  }
+}
+
 @import "base/normalize";
 @import "ui/index";
 @import "components/index";

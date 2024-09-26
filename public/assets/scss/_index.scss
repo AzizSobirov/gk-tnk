@@ -89,6 +89,109 @@ main {
   }
 }
 
+// ** Section Modern ** //
+.modern {
+  padding: 145px 0 100px;
+
+  .text-h2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(calc(-100% - 160px));
+      width: 548px;
+      height: 82.5px;
+      background: url('data:image/svg+xml,<svg width="549" height="84" viewBox="0 0 549 84" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 83.5H465.5L548 1" stroke="%232A2A2A"/></svg>')
+        center/contain no-repeat;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-30px);
+      width: 751.5px;
+      height: 215.5px;
+      background: url('data:image/svg+xml,<svg width="752" height="217" viewBox="0 0 752 217" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 136.5L136 1L351.5 216.5H752" stroke="%232A2A2A"/></svg>')
+        center/contain no-repeat;
+    }
+
+    div {
+      overflow: hidden;
+    }
+
+    div:nth-child(2) {
+      margin-left: 230px;
+    }
+
+    div:nth-child(3) {
+      align-self: flex-end;
+    }
+
+    span {
+      text-transform: uppercase;
+      display: block;
+    }
+
+    strong {
+      color: var(--primary);
+      font-weight: 400 !important;
+    }
+  }
+
+  &__cards {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__card {
+    @include nth(1) {
+      width: 660px;
+      height: 340px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    @include nth(2) {
+      width: 545px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      img {
+        width: 100%;
+        height: 290px;
+        object-fit: cover;
+      }
+
+      figcaption {
+        padding-top: 30px;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+      }
+    }
+  }
+}
+
 // ** Background lines ** //
 .bg-lines {
   .line-1,
@@ -114,3 +217,9 @@ main {
     left: calc(50% + 460px);
   }
 }
+
+.example {
+  height: 100vh;
+}
+
+// @include show(".modern");

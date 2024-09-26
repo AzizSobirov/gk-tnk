@@ -9,18 +9,83 @@
   transition: var(--transition-ease);
   z-index: 10;
 
+  &.sticky {
+    background: #fff;
+  }
+
   &__inner {
     height: 100%;
-    @include flex-row(space-between, center, 85px);
+    display: flex;
+    align-items: center;
   }
 
   &__menu {
+    position: relative;
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 85px;
 
     .menu {
       display: flex;
       align-items: center;
       gap: 35px;
+    }
+
+    .menu-item {
+      &.menu-item-has-children {
+        display: flex;
+        align-items: center;
+
+        & > div {
+          margin-left: 6px;
+          margin-bottom: 2px;
+          transform: rotate(0deg);
+          transform-origin: center;
+          transition: var(--transition-ease);
+        }
+
+        &:hover {
+          & > div {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+
+    .sub-menu {
+      position: absolute;
+      padding: 30px;
+      top: calc(100% + 20px);
+      left: 0;
+      width: 100%;
+      color: #fff;
+      background: var(--text-color);
+      transition: var(--transition-ease);
+      transform: rotateX(-90deg);
+      transform-origin: top;
+      opacity: 0;
+      display: none;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 35px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+      }
+
+      .menu-item {
+        @include start(column, 10px);
+
+        span {
+          color: #646464;
+          font-size: 20px;
+        }
+      }
     }
   }
 
