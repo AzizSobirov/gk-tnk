@@ -2,6 +2,36 @@ main {
   margin-top: 120px;
 }
 
+// ** Background lines ** //
+.bg-lines {
+  @include media("lg") {
+    display: none;
+  }
+
+  .line-1,
+  .line-2,
+  .line-3 {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: var(--gray);
+    z-index: -1;
+  }
+
+  .line-1 {
+    left: calc(50% - 440px);
+  }
+
+  .line-2 {
+    left: calc(50% - 100px);
+  }
+
+  .line-3 {
+    left: calc(50% + 460px);
+  }
+}
+
 // ** Section Intro ** //
 .intro {
   background: var(--secondary);
@@ -24,6 +54,10 @@ main {
     div:last-child {
       margin-top: 20px;
       margin-left: auto;
+
+      @include media("lg") {
+        margin-top: auto;
+      }
     }
 
     span {
@@ -43,11 +77,40 @@ main {
       width: 284px;
       height: 130px;
       object-fit: cover;
+      object-position: left;
     }
 
     figcaption {
       min-width: 251px;
       max-width: 251px;
+    }
+
+    @include media("1380px") {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: fit-content;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    @include media("lg") {
+      position: static;
+      margin-top: 20px;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+
+      img {
+        width: auto;
+        flex-grow: 1;
+      }
+    }
+    @include media("md") {
+      figcaption {
+        display: none;
+      }
     }
   }
 
@@ -75,15 +138,52 @@ main {
       max-width: 251px;
       text-align: right;
     }
+
+    @include media("1380px") {
+      position: static;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      margin-left: auto;
+    }
+    @include media("lg") {
+      width: 100%;
+    }
+    @include media("md") {
+      margin-top: 20px;
+      margin-bottom: 32px;
+
+      &-btn span {
+        font-size: 16px;
+      }
+    }
+    @include media("sm") {
+      flex-direction: column;
+      align-items: flex-start;
+
+      &-desc {
+        margin-left: auto;
+      }
+    }
   }
 
   &__video {
     margin-top: 10px;
     width: 100%;
+    height: 340px;
+
+    @include media("lg") {
+      height: 280px;
+    }
+    @include media("sm") {
+      height: 220px;
+    }
+    @include media("xs") {
+      height: 185px;
+    }
 
     video {
       width: 100%;
-      height: 340px;
+      height: 100%;
       object-fit: cover;
     }
   }
@@ -92,6 +192,14 @@ main {
 // ** Section Modern ** //
 .modern {
   padding: 145px 0 100px;
+  overflow: hidden;
+
+  @include media("lg") {
+    padding: 80px 0;
+  }
+  @include media("sm") {
+    padding: 35px 0;
+  }
 
   .text-h2 {
     position: relative;
@@ -99,6 +207,13 @@ main {
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
+
+    @include media("lg") {
+      gap: 20px;
+    }
+    @include media("sm") {
+      gap: 10px;
+    }
 
     &::before {
       content: "";
@@ -110,6 +225,13 @@ main {
       height: 82.5px;
       background: url('data:image/svg+xml,<svg width="549" height="84" viewBox="0 0 549 84" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 83.5H465.5L548 1" stroke="%232A2A2A"/></svg>')
         center/contain no-repeat;
+
+      @include media("1380px") {
+        transform: translateX(calc(-100% - 50px));
+      }
+      @include media("lg") {
+        display: none;
+      }
     }
 
     &::after {
@@ -122,6 +244,13 @@ main {
       height: 215.5px;
       background: url('data:image/svg+xml,<svg width="752" height="217" viewBox="0 0 752 217" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 136.5L136 1L351.5 216.5H752" stroke="%232A2A2A"/></svg>')
         center/contain no-repeat;
+
+      @include media("1380px") {
+        transform: translateX(20px);
+      }
+      @include media("lg") {
+        display: none;
+      }
     }
 
     div {
@@ -130,6 +259,10 @@ main {
 
     div:nth-child(2) {
       margin-left: 230px;
+
+      @include media("lg") {
+        margin: 0 auto;
+      }
     }
 
     div:nth-child(3) {
@@ -153,6 +286,19 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include media("1380px") {
+      margin-top: 80px;
+    }
+    @include media("lg") {
+      margin-top: 40px;
+      flex-direction: column;
+      gap: 20px;
+    }
+    @include media("sm") {
+      margin-top: 24px;
+      gap: 10px;
+    }
   }
 
   &__card {
@@ -163,7 +309,17 @@ main {
       img {
         width: 100%;
         height: 100%;
+        max-height: 380px;
         object-fit: cover;
+      }
+
+      @include media("1380px") {
+        width: 480px;
+        height: 280px;
+      }
+      @include media("lg") {
+        width: 100%;
+        height: auto;
       }
     }
     @include nth(2) {
@@ -188,33 +344,37 @@ main {
         justify-content: flex-start;
         gap: 20px;
       }
+
+      @include media("1380px") {
+        width: 420px;
+
+        img {
+          height: 240px;
+        }
+
+        figcaption {
+          padding-top: 20px;
+        }
+
+        svg {
+          width: 120px;
+          height: auto;
+        }
+      }
+      @include media("lg") {
+        width: 100%;
+
+        img {
+          height: auto;
+          max-height: 340px;
+        }
+      }
+      @include media("xs") {
+        svg {
+          width: 80px;
+        }
+      }
     }
-  }
-}
-
-// ** Background lines ** //
-.bg-lines {
-  .line-1,
-  .line-2,
-  .line-3 {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 1px;
-    background: var(--gray);
-    z-index: -1;
-  }
-
-  .line-1 {
-    left: calc(50% - 440px);
-  }
-
-  .line-2 {
-    left: calc(50% - 100px);
-  }
-
-  .line-3 {
-    left: calc(50% + 460px);
   }
 }
 
@@ -222,4 +382,4 @@ main {
   height: 100vh;
 }
 
-// @include show(".modern");
+// @include show(".modern", true);

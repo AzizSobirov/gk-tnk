@@ -50,11 +50,17 @@
   font-weight: 400;
   font-family: var(--font-secondary);
 
-  @include media("xl") {
-    font-size: 45px;
+  @include media("1380px") {
+    font-size: 108px;
+  }
+  @include media("lg") {
+    font-size: 80px;
+  }
+  @include media("md") {
+    font-size: 64px;
   }
   @include media("sm") {
-    font-size: 25px;
+    font-size: 48px;
   }
 }
 
@@ -63,11 +69,17 @@
   font-weight: 400;
   font-family: var(--font-secondary);
 
-  @include media("xl") {
-    font-size: 30px;
+  @include media("1380px") {
+    font-size: 80px;
+  }
+  @include media("lg") {
+    font-size: 64px;
+  }
+  @include media("md") {
+    font-size: 48px;
   }
   @include media("sm") {
-    font-size: 25px;
+    font-size: 32px;
   }
 }
 

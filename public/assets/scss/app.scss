@@ -15,10 +15,30 @@
   --content-width: 1340px;
   --content-padding: 20px;
 }
-
 @include media("1380px") {
   :root {
-    --content-width: 1180px;
+    --content-width: 1024px;
+  }
+}
+@include media("lg") {
+  :root {
+    --content-width: 768px;
+  }
+}
+@include media("md") {
+  :root {
+    --content-width: 640px;
+  }
+}
+@include media("sm") {
+  :root {
+    --content-width: 475px;
+    --content-padding: 15px;
+  }
+}
+@include media("xs") {
+  :root {
+    --content-width: 100%;
   }
 }
 
