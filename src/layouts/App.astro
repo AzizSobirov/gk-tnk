@@ -23,6 +23,8 @@ const { title = _meta.title, meta = _meta } = Astro.props as PageSEO;
     <meta name="author" content={meta.author} />
     <meta name="theme-color" content={meta.color} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="./assets/css/fancybox.min.css" />
     <title>{title}</title>
     <slot name="head" />
   </head>
@@ -33,7 +35,7 @@ const { title = _meta.title, meta = _meta } = Astro.props as PageSEO;
     <!-- Main -->
     <slot />
     <!-- TheFooter -->
-    <!-- <TheFooter /> -->
+    <TheFooter />
     <!-- Background Lines -->
     <div class="bg-lines">
       <div class="line-1"></div>
@@ -43,10 +45,13 @@ const { title = _meta.title, meta = _meta } = Astro.props as PageSEO;
     <slot name="footer" />
 
     <!-- Scripts -->
+    <script src="./assets/js/swiper.min.js" is:inline></script>
     <script src="./assets/js/gsap.min.js" is:inline></script>
     <script src="./assets/js/ScrollTriger.min.js" is:inline></script>
     <script src="./assets/js/MouseFollower.min.js" is:inline></script>
-    <script src="./assets/js/animations.js" is:inline></script>
-    <script src="./assets/js/app.js" is:inline></script>
+    <script src="./assets/js/fancybox.min.js" is:inline></script>
+    <script src={`./assets/js/animations.js?v=${Date.now()}`} is:inline
+    ></script>
+    <script src={`./assets/js/app.js?v=${Date.now()}`} is:inline></script>
   </body>
 </html>

@@ -1,4 +1,14 @@
 .btn {
   @include center;
   transition: var(--transition-ease);
+
+  &.variant-outline {
+    padding: 10px 22px;
+    border: 1px solid var(--text-color);
+
+    &:hover {
+      color: #fff;
+      background: var(--text-color);
+    }
+  }
 }

@@ -1,0 +1,236 @@
+---
+import App from "../layouts/App.astro";
+import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
+import { TheFaq } from "@components";
+---
+
+<App title="Главная">
+  <main>
+    <!-- We know -->
+    <Section name="we-know" main>
+      <div class="breadcrumb">
+        <a href="/">Главная</a>
+        <div class="line"></div>
+        <span>О компании</span>
+      </div>
+      <H2><div><span>мы знаем что нужно именно вам</span></div></H2>
+      <video
+        class="we-know__video"
+        poster="./assets/images/we-know-poster.png"
+        autoplay
+        loop
+        muted
+      >
+        <source src="./assets/videos/2.mp4" />
+      </video>
+    </Section>
+    <!-- Who we are -->
+    <Section name="about">
+      <div class="about__text">
+        <div class="bg-img">
+          <Image src="bg.svg" />
+        </div>
+        <H3>кто мы</H3>
+        <p class="about__text-desc">
+          ГК ТНК – это динамично развивающаяся многопрофильная строительная
+          компания, предоставляющая широкий спектр услуг для комплексного
+          решения любых задач, связанных со строительством, благоустройством и
+          инженерными работами. Мы предлагаем не только общестроительные работы,
+          но и оказываем специализированные услуги на всех ключевых этапах
+          реализации проекта, что позволяет нашим клиентам полностью доверить
+          нам процесс возведения и обустройства объекта.
+        </p>
+      </div>
+      <div class="about__img">
+        <Image src="about-img.png" />
+      </div>
+    </Section>
+    <!-- our advantages -->
+    <Section name="advantages">
+      <div class="advantages__wrapper">
+        <div class="advantages__item">
+          <H3>наши преимущества</H3>
+          <ul>
+            <li>индивидуальное проектирование</li>
+            <li>
+              альтернативные варианты строительства: каждый проект может быть
+              выполнен в различных материалах и по разным технологиям
+            </li>
+            <li>профессиональные бригады и поэтапный технадзор</li>
+            <li>индивидуальный подход к каждому заказчику</li>
+          </ul>
+        </div>
+        <div class="advantages__item">
+          <H3>как мы помогаем людям </H3>
+          <p>
+            Начиная с проведения детальных исследований участка и анализа его
+            геологических особенностей, мы тщательно подготавливаем почву для
+            будущего строительства. Наши услуги включают разработку, вывоз и
+            утилизацию грунта, а также расчеты нагрузок на фундамент. Мы
+            выполняем весь комплекс работ по устройству фундамента и
+            коммуникаций, что включает электроснабжение, водоснабжение,
+            водоотведение и канализацию, подведение газа.
+          </p>
+        </div>
+      </div>
+    </Section>
+    <!-- photos and videos -->
+    <Section name="gallery">
+      <H3>фото и видео</H3>
+      <p class="gallery__desc">
+        В нашей фотогалерее вы можете ознакомиться с фото и видео наших
+        построенных домов, их экстерьерами и интерьерами, а также с <br /> фотографиями
+        процесса строительства.
+      </p>
+      <div class="gallery__list">
+        {
+          Array(4)
+            .fill(0)
+            .map((_, index) => (
+              <div
+                class="gallery__item"
+                data-cursor="view"
+                data-fancybox="gallery"
+                data-src="./assets/img/project.png"
+              >
+                <Image src="project.png" />
+              </div>
+            ))
+        }
+      </div>
+      <a href="/portfolio" class="gallery__link" data-cursor="link">
+        <span>Наше портфолио</span>
+        <svg
+          width="241"
+          height="8"
+          viewBox="0 0 241 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M240.354 4.35355C240.549 4.15829 240.549 3.84171 240.354 3.64645L237.172 0.464466C236.976 0.269204 236.66 0.269204 236.464 0.464466C236.269 0.659728 236.269 0.976311 236.464 1.17157L239.293 4L236.464 6.82843C236.269 7.02369 236.269 7.34027 236.464 7.53553C236.66 7.7308 236.976 7.7308 237.172 7.53553L240.354 4.35355ZM0 4.5H240V3.5H0V4.5Z"
+            fill="currentColor"></path>
+        </svg>
+      </a>
+    </Section>
+    <!-- out team -->
+    <Section name="team">
+      <H3>наша команда</H3>
+      <div class="team__list">
+        {
+          Array(8)
+            .fill(0)
+            .map((_, index) => (
+              <figure class="team__item">
+                <Image class="team__item-img" src="team.png" />
+                <figcaption class="team__item-content">
+                  <div class="team__item-name">Иванов Иван </div>
+                  <p class="team__item-job">
+                    Работает в компании рабочим работы.
+                  </p>
+                </figcaption>
+              </figure>
+            ))
+        }
+      </div>
+    </Section>
+    <!-- certificates -->
+    <Section name="certificates">
+      <div class="certificates__wrapper">
+        <div class="certificates__text">
+          <H3>сертификаты и дипломы</H3>
+          <p class="certificates__text-desc">
+            Мы постоянно совершенствуем наши навыки и регулярно проходим
+            обучение, чтобы оставаться в курсе современных тенденций и
+            использовать только передовые технологии и методы работы.
+            <br /><br />
+            Наша команда стремится к непрерывному развитию и внедрению инновационных
+            решений, что позволяет нам эффективно справляться с любыми вызовами и
+            поддерживать высочайшие стандарты качества.
+            <br /><br />
+            Мы инвестируем в профессиональное развитие наших сотрудников и следим
+            за последними достижениями в области строительства и инженерии, чтобы
+            предложить нашим клиентам самые современные и надежные решения.
+          </p>
+        </div>
+        <div class="certificates__swiper">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              {
+                Array(6)
+                  .fill(0)
+                  .map((_, index) => (
+                    <div
+                      class="swiper-slide"
+                      data-cursor="view"
+                      data-fancybox="certificates"
+                      data-src="./assets/img/certificate.png"
+                    >
+                      <Image src="certificate.png" />
+                    </div>
+                  ))
+              }
+            </div>
+          </div>
+          <div class="swiper-actions">
+            <div
+              class="icon btn-prev"
+              role="button"
+              tabindex="0"
+              aria-label="Prev"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="24" height="24" fill="#2A2A2A"></rect>
+                <path d="M14 7L9 12L14 17" stroke="white"></path>
+              </svg>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div
+              class="icon btn-next"
+              role="button"
+              tabindex="0"
+              aria-label="Next"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="24" height="24" fill="#2A2A2A"></rect>
+                <path d="M9 17L14 12L9 7" stroke="white"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+    <!-- partners -->
+    <Section name="partners">
+      <div class="partners__list">
+        <a href="#" class="partners__item">
+          <Image src="partners/1.png" />
+        </a>
+        <a href="#" class="partners__item">
+          <Image src="partners/2.png" />
+        </a>
+        <a href="#" class="partners__item">
+          <Image src="partners/3.png" />
+        </a>
+        <a href="#" class="partners__item">
+          <Image src="partners/4.png" />
+        </a>
+        <a href="#" class="partners__item">
+          <Image src="partners/5.png" />
+        </a>
+      </div>
+    </Section>
+  </main>
+</App>

@@ -1,11 +1,12 @@
 ---
 import App from "../layouts/App.astro";
-import { H1, H2, Button, Section, Image, Icon } from "@ui";
+import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
+import { TheFaq } from "@components";
 ---
 
 <App title="Главная">
   <main>
-    <!-- The Intro -->
+    <!-- Intro -->
     <Section name="intro" main>
       <div class="intro__content">
         <H1>
@@ -46,7 +47,7 @@ import { H1, H2, Button, Section, Image, Icon } from "@ui";
         </div>
       </Fragment>
     </Section>
-    <!-- The Modern House -->
+    <!-- Modern House -->
     <Section name="modern">
       <H2>
         <div>
@@ -84,8 +85,154 @@ import { H1, H2, Button, Section, Image, Icon } from "@ui";
         </figure>
       </div>
     </Section>
+    <!-- professionals -->
+    <Section name="professionals">
+      <div class="professionals__bg">
+        <Image src="professionals-bg.png" />
+      </div>
+      <div class="professionals__header">
+        <H2>
+          <div>
+            <span>Мы профессионалы в</span>
+          </div>
+          <div>
+            <span>сфере строительства</span>
+          </div>
+        </H2>
+        <p class="professionals__header-desc">
+          Мы профессионалы в сфере строительства и предлагаем полный комплекс
+          услуг: земляные работы, проектирование домов, строительство домов,
+          интерьерные работы (предчистовая отделка, чистовая отделка,
+          мебелирование) и поставку строительных материалов. Наш опыт и
+          профессионализм гарантируют качественное выполнение работ и довольных
+          клиентов. Доверьте строительство своего дома нам и вы останетесь
+          довольны результатом! Мы строим современные дома для современных
+          людей.
+        </p>
+      </div>
+      <div class="professionals__img">
+        <Image src="professionals.png" />
+        <a href="#" class="professionals__img-link" data-cursor="link">
+          <span>Наши услуги </span>
+          <svg
+            width="241"
+            height="8"
+            viewBox="0 0 241 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M240.854 4.35355C241.049 4.15829 241.049 3.84171 240.854 3.64645L237.672 0.464466C237.476 0.269204 237.16 0.269204 236.964 0.464466C236.769 0.659728 236.769 0.976311 236.964 1.17157L239.793 4L236.964 6.82843C236.769 7.02369 236.769 7.34027 236.964 7.53553C237.16 7.7308 237.476 7.7308 237.672 7.53553L240.854 4.35355ZM0.5 4.5H240.5V3.5H0.5V4.5Z"
+              fill="#2A2A2A"></path>
+          </svg>
+        </a>
+      </div>
+    </Section>
+    <!-- Process -->
+    <Section name="process">
+      <H3>
+        <div>
+          <span>Мы делаем процесс</span>
+        </div>
+        <div>
+          <span>строительства вашего дома</span>
+        </div>
+        <div>
+          <span>прогнозируемым и понятным</span>
+        </div>
+      </H3>
+      <ul class="process__list">
+        <li class="process__item">
+          <div class="process__item-title">Руководитель проекта</div>
+          <p class="process__item-desc">
+            На протяжении всего периода строительства предоставляет вам полную
+            информацию о ходе постройки.
+          </p>
+        </li>
 
-    <!--  -->
-    <Section name="example" />
+        <li class="process__item">
+          <div class="process__item-title">Генеральный подряд</div>
+          <p class="process__item-desc">
+            Мы несём полную персональную ответственность за ход и результаты
+            строительства. Всё указывается в договоре строительства.
+          </p>
+        </li>
+
+        <li class="process__item">
+          <div class="process__item-title">Финансовая прозрачность</div>
+          <p class="process__item-desc">
+            Никаких скрытых платежей и доплат, работаем согласно первоначально
+            согласованным сметам, не навязываем дополнительные услуги.
+          </p>
+        </li>
+
+        <li class="process__item">
+          <div class="process__item-title">Документация проекта</div>
+          <p class="process__item-desc">
+            Мы подготовим полный пакет исполнительной документации, который
+            увеличивает рентабельность на вторичном рынке.
+          </p>
+        </li>
+
+        <li class="process__item">
+          <div class="process__item-title">Современный дом</div>
+          <p class="process__item-desc">
+            Используем современные материалы и технологии в строительстве,
+            постоянно совершенствуемся и обучаемся новому.
+          </p>
+        </li>
+
+        <li class="process__item">
+          <div class="process__item-title">Современные люди</div>
+          <p class="process__item-desc">
+            Знаем, что нужно современному человеку, индивидуальный подход к
+            каждому клиенту. Все наши дома уникальны по своей сути.
+          </p>
+        </li>
+      </ul>
+      <a href="#" class="process__link" data-cursor="link">
+        <span>О компании</span>
+        <svg
+          width="241"
+          height="8"
+          viewBox="0 0 241 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M240.354 4.35355C240.549 4.15829 240.549 3.84171 240.354 3.64645L237.172 0.464466C236.976 0.269204 236.66 0.269204 236.464 0.464466C236.269 0.659728 236.269 0.976311 236.464 1.17157L239.293 4L236.464 6.82843C236.269 7.02369 236.269 7.34027 236.464 7.53553C236.66 7.7308 236.976 7.7308 237.172 7.53553L240.354 4.35355ZM0 4.5H240V3.5H0V4.5Z"
+            fill="#2A2A2A"></path>
+        </svg>
+      </a>
+    </Section>
+    <!-- We Know -->
+    <Section name="know">
+      <div class="know__content">
+        <div class="bg-img">
+          <Image src="bg.svg" />
+        </div>
+
+        <div class="know__text">
+          <H2>
+            <div>
+              <span>мы знаем что </span>
+            </div>
+            <div>
+              <span>вам нужно</span>
+            </div>
+          </H2>
+          <p class="know__text-desc">
+            Спроектируем и построим дом Вашей мечты.
+          </p>
+          <div class="know__text-actions">
+            <a href="#">Написать нам</a>
+            <a href="#">Позвонить нам</a>
+          </div>
+        </div>
+        <Image src="we-know.png" class="know__img" />
+      </div>
+    </Section>
+    <!-- Faq -->
+    <TheFaq />
   </main>
 </App>

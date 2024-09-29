@@ -44,7 +44,8 @@
   transform: scale(0);
 }
 
-.mf-cursor.-link:before {
+.mf-cursor.-link:before,
+.mf-cursor.-view:before {
   background: var(--text-color);
   transform: scale(1.8);
 }
@@ -139,6 +140,7 @@
 
 .mf-cursor.-media .mf-cursor-media-box,
 .mf-cursor.-link .mf-cursor-media-box,
+.mf-cursor.-view .mf-cursor-media-box,
 .mf-cursor.-swipe .mf-cursor-media-box {
   opacity: 1;
   transform: scale(0.696);

@@ -88,27 +88,36 @@
   font-weight: 400;
   font-family: var(--font-secondary);
 
-  @include media("xl") {
-    font-size: 27px;
+  @include media("lg") {
+    font-size: 36px;
   }
   @include media("sm") {
-    font-size: 20px;
+    font-size: 28px;
   }
 }
 
-// .text-h4 {
-//   font-size: 32px;
-//   font-weight: 700;
-//   line-height: 120%;
-//   letter-spacing: -0.02em;
+.breadcrumb {
+  margin-bottom: 65px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
 
-//   @include media("xl") {
-//     font-size: 25px;
-//   }
-// }
+  @include media("sm") {
+    margin-bottom: 40px;
+    font-size: 14px;
+    gap: 10px 15px;
+  }
 
-.sm\:hidden {
-  @include media("641px", min-width) {
-    display: none;
+  div {
+    width: 40px;
+    height: 1px;
+    background: #878787;
+  }
+
+  span {
+    color: #878787;
   }
 }

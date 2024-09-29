@@ -21,7 +21,7 @@ if (main) {
     ) : (
       <>
         <slot name="header" />
-        <div class="container">
+        <div class:list={`${name}__inner container`}>
           <slot />
         </div>
         <slot name="footer" />
