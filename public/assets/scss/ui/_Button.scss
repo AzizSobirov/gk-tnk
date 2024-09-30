@@ -2,6 +2,15 @@
   @include center;
   transition: var(--transition-ease);
 
+  &.variant-solid {
+    padding: 15px 25px;
+    background: #eff0ee;
+
+    &:hover {
+      background: #d0d0d0;
+    }
+  }
+
   &.variant-outline {
     padding: 10px 22px;
     border: 1px solid var(--text-color);

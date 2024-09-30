@@ -62,6 +62,7 @@ if (header) {
   });
 }
 
+// accordions
 const getAccordionParents = document.querySelectorAll("[data-accordion");
 getAccordionParents.forEach((parent) => {
   const isMultiple = parent.dataset.multiple;
@@ -93,9 +94,79 @@ getAccordionParents.forEach((parent) => {
   });
 });
 
+// portfolio
+const portfolio = document.querySelector(".portfolio");
+if (portfolio) {
+  const filters = portfolio.querySelectorAll(".portfolio__filter-item");
+  const projects = portfolio.querySelectorAll(".portfolio__list-item");
+  const btn = portfolio.querySelector(".btn");
+
+  filters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      filters.forEach((el) => {
+        el.classList.remove("active");
+      });
+      filter.classList.add("active");
+
+      const value = filter.dataset.value;
+      projects.forEach((project, index) => {
+        if (value == "Все") {
+          if (index < 12) {
+            project.style.display = "block";
+          } else {
+            project.style.display = "none";
+          }
+          btn.style.display = "block";
+        } else if (project.dataset.name == value) {
+          project.style.display = "block";
+        } else {
+          project.style.display = "none";
+          btn.style.display = "none";
+        }
+      });
+    });
+  });
+
+  btn.addEventListener("click", () => {
+    projects.forEach((project) => {
+      project.style.display = "block";
+    });
+
+    btn.style.display = "none";
+  });
+}
+
+// seo
+const seo = document.querySelector(".seo");
+if (seo) {
+  const dropdown = seo.querySelector(".seo__dropdown");
+  const content = seo.querySelector(".seo__dropdown-content");
+  const btn = seo.querySelector(".seo__btn");
+
+  let minHeight = 0;
+  let maxHeight = 0;
+
+  minHeight = content.querySelector("p").offsetHeight;
+  maxHeight = content.offsetHeight;
+  dropdown.style.maxHeight = minHeight + "px";
+
+  btn.addEventListener("click", () => {
+    if (dropdown.classList.contains("active")) {
+      dropdown.classList.remove("active");
+      dropdown.style.maxHeight = minHeight + "px";
+      btn.innerHTML = "Подробнее";
+    } else {
+      dropdown.classList.add("active");
+      dropdown.style.maxHeight = maxHeight + "px";
+      btn.innerHTML = "Скрыть";
+    }
+  });
+}
+
+// swiper
 let certificatesSwiper = new Swiper(".certificates .swiper", {
-  slidesPerView: 1,
-  spaceBetween: 20,
+  slidesPerView: 2,
+  spaceBetween: 8,
   navigation: {
     nextEl: ".certificates .btn-next",
     prevEl: ".certificates .btn-prev",
@@ -105,11 +176,15 @@ let certificatesSwiper = new Swiper(".certificates .swiper", {
     clickable: true,
   },
   breakpoints: {
-    768: {
+    475: {
       slidesPerView: 2,
-      spaceBetween: 20,
+      spaceBetween: 15,
     },
-    1024: {
+    // 768: {
+    //   slidesPerView: 2,
+    //   spaceBetween: 15,
+    // },
+    769: {
       slidesPerView: 3,
       spaceBetween: 20,
     },
@@ -117,7 +192,7 @@ let certificatesSwiper = new Swiper(".certificates .swiper", {
 });
 
 // fancybox
-let dataFancybox = ["gallery", "certificates"];
+let dataFancybox = ["gallery", "portfolio", "certificates"];
 dataFancybox.forEach((name) => {
   Fancybox.bind(`[data-fancybox="${name}"]`, {
     Images: { Panzoom: { maxScale: 3 } },

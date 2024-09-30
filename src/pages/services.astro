@@ -1,0 +1,105 @@
+---
+import App from "../layouts/App.astro";
+import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
+---
+
+<App title="Услуги">
+  <main>
+    <!-- Services -->
+    <Section name="services">
+      <div class="breadcrumb">
+        <a href="/">Главная</a>
+        <div class="line"></div>
+        <span>Услуги</span>
+      </div>
+
+      <H2><div><span>услуги нашей компании</span></div></H2>
+
+      <div class="services__construction">
+        <div class="services__construction-content">
+          <div class="bg-img">
+            <Image src="bg.svg" />
+          </div>
+
+          <div class="services__text">
+            <H3>Строительство</H3>
+            <ul class="services__list">
+              <li class="services__list-item">Возведение дома под ключ</li>
+              <li class="services__list-item">Возведение коробки под ключ</li>
+              <li class="services__list-item">Фундамент под ключ</li>
+            </ul>
+          </div>
+        </div>
+        <div class="services__construction-img">
+          <Image src="services/1.png" />
+        </div>
+      </div>
+
+      <div class="services__additional">
+        <div class="services__additional-left">
+          <div class="bg-img">
+            <Image src="services/2.png" />
+          </div>
+          <div class="services__text">
+            <H3>Коммуникации</H3>
+            <ul class="services__list">
+              <li class="services__list-item">Газ под ключ</li>
+              <li class="services__list-item">Электроснабжение</li>
+              <li class="services__list-item">Водоснабжение</li>
+              <li class="services__list-item">Водоотведение и канализация</li>
+            </ul>
+          </div>
+        </div>
+        <div class="services__additional-right">
+          <div class="services__text">
+            <H3>Исследования</H3>
+            <ul class="services__list">
+              <li class="services__list-item">Геологические изыскания</li>
+              <li class="services__list-item">Расчет нагрузок на фундамент</li>
+            </ul>
+          </div>
+          <div class="services__text">
+            <H3>другие услуги</H3>
+            <ul class="services__list">
+              <li class="services__list-item">Проектирование</li>
+              <li class="services__list-item">
+                Поставка строительных материалов
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="services__interior">
+        <div class="bg-img">
+          <Image src="services/3.png" />
+        </div>
+        <div class="services__text">
+          <H3>Интерьерные работы</H3>
+          <ul class="services__list">
+            <li class="services__list-item">
+              Предчистовая отделка (White box)
+            </li>
+            <li class="services__list-item">Чистовая отделка</li>
+            <li class="services__list-item">Мебелирование</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="services__plot">
+        <div class="services__text">
+          <H3>Работы на участке </H3>
+          <ul class="services__list">
+            <li class="services__list-item">Ландшафтный дизайн</li>
+            <li class="services__list-item">
+              Разработка, вывоз и утилизация грунта
+            </li>
+          </ul>
+        </div>
+        <div class="services__plot-img">
+          <Image src="services/4.png" />
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>

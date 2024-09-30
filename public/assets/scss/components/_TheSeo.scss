@@ -1,0 +1,28 @@
+/* Styles for the TheSeo component */
+.seo {
+  &__dropdown {
+    margin: 30px 0;
+    width: 100%;
+    transition: var(--transition-bezier);
+    overflow: hidden;
+
+    @include media("sm") {
+      margin: 20px 0;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+
+      @include media("sm") {
+        gap: 15px;
+      }
+    }
+  }
+
+  &__btn {
+    text-decoration: underline;
+  }
+}

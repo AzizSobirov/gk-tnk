@@ -1,0 +1,147 @@
+---
+import App from "../layouts/App.astro";
+import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
+import { TheFaq } from "@components";
+---
+
+<App title="Портфолио">
+  <main>
+    <!-- portfolio -->
+    <Section name="portfolio">
+      <div class="breadcrumb">
+        <a href="/">Главная</a>
+        <div class="line"></div>
+        <span>Портфолио</span>
+      </div>
+      <div class="portfolio__content">
+        <H2><div><span>о нас говорят наши работы</span></div></H2>
+        <div class="portfolio__filter" aria-label="Фильтр">
+          <div
+            class="portfolio__filter-item active"
+            role="button"
+            tabindex="0"
+            aria-label="Строительство"
+            data-value="Все"
+          >
+            Все
+          </div>
+          <div
+            class="portfolio__filter-item"
+            role="button"
+            tabindex="0"
+            aria-label="Строительство"
+            data-value="Строительство"
+          >
+            Строительство
+          </div>
+          <div
+            class="portfolio__filter-item"
+            role="button"
+            tabindex="0"
+            aria-label="Ландшафтный дизайн"
+            data-value="Ландшафтный дизайн"
+          >
+            Ландшафтный дизайн
+          </div>
+          <div
+            class="portfolio__filter-item"
+            role="button"
+            tabindex="0"
+            aria-label="Интерьерные работы"
+            data-value="Интерьерные работы"
+          >
+            Интерьерные работы
+          </div>
+        </div>
+        <div class="portfolio__list">
+          {
+            Array.from({ length: 4 }).map((_, i) => (
+              <div
+                class="portfolio__list-item"
+                data-cursor="view"
+                data-fancybox="portfolio"
+                data-src="./assets/img/project.png"
+                data-name="Строительство"
+              >
+                <Image
+                  src="project.png"
+                  alt="portfolio"
+                  class="portfolio__list-img"
+                />
+              </div>
+            ))
+          }
+          {
+            Array.from({ length: 7 }).map((_, i) => (
+              <div
+                class="portfolio__list-item"
+                data-cursor="view"
+                data-fancybox="portfolio"
+                data-src="./assets/img/project.png"
+                data-name="Ландшафтный дизайн"
+              >
+                <Image
+                  src="project.png"
+                  alt="portfolio"
+                  class="portfolio__list-img"
+                />
+              </div>
+            ))
+          }
+          {
+            Array.from({ length: 9 }).map((_, i) => (
+              <div
+                class="portfolio__list-item"
+                data-cursor="view"
+                data-fancybox="portfolio"
+                data-src="./assets/img/project.png"
+                data-name="Интерьерные работы"
+              >
+                <Image
+                  src="project.png"
+                  alt="portfolio"
+                  class="portfolio__list-img"
+                />
+              </div>
+            ))
+          }
+        </div>
+        <div
+          class="btn variant-solid"
+          role="button"
+          tabindex="0"
+          aria-label="Показать ещё"
+        >
+          Показать ещё
+        </div>
+      </div>
+    </Section>
+    <!-- We Know -->
+    <Section name="know">
+      <div class="know__content">
+        <div class="bg-img">
+          <Image src="bg.svg" />
+        </div>
+
+        <div class="know__text">
+          <H2>
+            <div>
+              <span>мы знаем что </span>
+            </div>
+            <div>
+              <span>вам нужно</span>
+            </div>
+          </H2>
+          <p class="know__text-desc">
+            Спроектируем и построим дом Вашей мечты.
+          </p>
+          <div class="know__text-actions">
+            <a href="#">Написать нам</a>
+            <a href="#">Позвонить нам</a>
+          </div>
+        </div>
+        <Image src="we-know.png" class="know__img" />
+      </div>
+    </Section>
+  </main>
+</App>
