@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [autoGenerateImports()],
   output: "static",
   publicDir: "public",
-  compressHTML: !isProduction,
+  // compressHTML: !isProduction,
   build: {
     format: isProduction ? "file" : "directory",
     assets: "assets",

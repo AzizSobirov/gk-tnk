@@ -1,0 +1,48 @@
+@import "base/mixins";
+
+@include font-face("Actay", 400);
+@include font-face("Buyan", 400);
+
+:root {
+  --primary: #ffc700;
+  --gray: #eeeeee;
+  --text-color: #2a2a2a;
+  --bg-color: #fff;
+  --font-primary: "Actay", sans-serif;
+  --font-secondary: "Buyan", sans-serif;
+  --transition-ease: 0.3s ease;
+  --transition-bezier: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --content-width: 1340px;
+  --content-padding: 20px;
+}
+@include media("1380px") {
+  :root {
+    --content-width: 1024px;
+  }
+}
+@include media("lg") {
+  :root {
+    --content-width: 768px;
+  }
+}
+@include media("md") {
+  :root {
+    --content-width: 640px;
+  }
+}
+@include media("sm") {
+  :root {
+    --content-width: 475px;
+    --content-padding: 15px;
+  }
+}
+@include media("xs") {
+  :root {
+    --content-width: 100%;
+  }
+}
+
+@import "base/normalize";
+@import "ui/index";
+@import "components/index";
+@import "index";
