@@ -64,7 +64,6 @@ if (introEl) {
 const modernEl = document.querySelector(".modern");
 if (modernEl) {
   const titles = modernEl.querySelectorAll(".text-h2 span");
-  const images = modernEl.querySelectorAll(".modern__card img");
   const texts = [];
 
   titles.forEach((title) => {
@@ -74,7 +73,7 @@ if (modernEl) {
     texts.push(item);
   });
 
-  gsap.set([texts, images], { yPercent: 100 });
+  gsap.set([texts], { yPercent: 100 });
   gsap.to(texts, {
     ease: "power4.out",
     duration: 1.5,
@@ -88,17 +87,22 @@ if (modernEl) {
     },
   });
 
-  gsap.to(images, {
-    ease: "power4.out",
-    duration: 1.5,
-    yPercent: 0,
-    stagger: 0.25,
-    scrollTrigger: {
-      trigger: ".modern__cards",
-      start: "top 65%",
-      end: "bottom 65%",
-    },
-  });
+  if (modernEl.classList.contains("is-main")) {
+    const images = modernEl.querySelectorAll(".modern__card img");
+    gsap.set([images], { yPercent: 100 });
+
+    gsap.to(images, {
+      ease: "power4.out",
+      duration: 1.5,
+      yPercent: 0,
+      stagger: 0.25,
+      scrollTrigger: {
+        trigger: ".modern__cards",
+        start: "top 65%",
+        end: "bottom 65%",
+      },
+    });
+  }
 }
 
 const professionalsEl = document.querySelector(".professionals");
