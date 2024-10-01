@@ -51,7 +51,15 @@ import { Section, H2, Accordion } from "@ui";
         Нет ответа на ваш вопрос? <br />
         Напишите нам и мы ответим на все ваши вопросы.
       </p>
-      <div class="faq__ask-btn btn variant-outline">Написать нам</div>
+      <div
+        class="faq__ask-btn btn variant-outline"
+        role="button"
+        tabindex="0"
+        aria-label="Написать нам"
+        data-modal="form"
+      >
+        Написать нам
+      </div>
     </div>
   </div>
 </Section>

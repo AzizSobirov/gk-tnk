@@ -56,9 +56,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
 
     @include media("1380px") {

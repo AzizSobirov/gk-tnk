@@ -13,16 +13,12 @@ import { TheFaq } from "@components";
         <div class="line"></div>
         <span>О компании</span>
       </div>
-      <H2><div><span>мы знаем что нужно именно вам</span></div></H2>
-      <video
-        class="we-know__video"
-        poster="./assets/images/we-know-poster.png"
-        autoplay
-        loop
-        muted
-      >
-        <source src="./assets/videos/2.mp4" />
-      </video>
+      <H2><span>мы знаем что нужно именно вам</span></H2>
+      <div class="we-know__video">
+        <video poster="./assets/images/we-know-poster.png" autoplay loop muted>
+          <source src="./assets/videos/2.mp4" />
+        </video>
+      </div>
     </Section>
     <!-- Who we are -->
     <Section name="about">
@@ -30,7 +26,7 @@ import { TheFaq } from "@components";
         <div class="bg-img">
           <Image src="bg.svg" />
         </div>
-        <H3>кто мы</H3>
+        <H3><span>кто мы</span></H3>
         <p class="about__text-desc">
           ГК ТНК – это динамично развивающаяся многопрофильная строительная
           компания, предоставляющая широкий спектр услуг для комплексного
@@ -76,7 +72,7 @@ import { TheFaq } from "@components";
     </Section>
     <!-- photos and videos -->
     <Section name="gallery">
-      <H3>фото и видео</H3>
+      <H3><span>фото и видео</span></H3>
       <p class="gallery__desc">
         В нашей фотогалерее вы можете ознакомиться с фото и видео наших
         построенных домов, их экстерьерами и интерьерами, а также с <br /> фотографиями
@@ -115,14 +111,16 @@ import { TheFaq } from "@components";
     </Section>
     <!-- out team -->
     <Section name="team">
-      <H3>наша команда</H3>
+      <H3><span>наша команда</span></H3>
       <div class="team__list">
         {
           Array(8)
             .fill(0)
             .map((_, index) => (
               <figure class="team__item">
-                <Image class="team__item-img" src="team.png" />
+                <div class="team__item-img">
+                  <Image src="team.png" />
+                </div>
                 <figcaption class="team__item-content">
                   <div class="team__item-name">Иванов Иван </div>
                   <p class="team__item-job">

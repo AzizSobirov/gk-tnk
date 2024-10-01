@@ -1,7 +1,6 @@
 ---
 import App from "../layouts/App.astro";
 import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
-import { TheFaq } from "@components";
 ---
 
 <App title="Портфолио">
@@ -14,7 +13,7 @@ import { TheFaq } from "@components";
         <span>Портфолио</span>
       </div>
       <div class="portfolio__content">
-        <H2><div><span>о нас говорят наши работы</span></div></H2>
+        <H2><span>о нас говорят наши работы</span></H2>
         <div class="portfolio__filter" aria-label="Фильтр">
           <div
             class="portfolio__filter-item active"
@@ -140,7 +139,9 @@ import { TheFaq } from "@components";
             <a href="#">Позвонить нам</a>
           </div>
         </div>
-        <Image src="we-know.png" class="know__img" />
+        <div class="know__img">
+          <Image src="we-know.png" />
+        </div>
       </div>
     </Section>
   </main>

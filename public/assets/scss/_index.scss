@@ -68,32 +68,28 @@ section {
     height: 100%;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 
-    div {
-      overflow: hidden;
+    @include media("lg") {
+      gap: 0;
     }
 
-    div:last-child {
-      margin-top: 20px;
+    & > span:last-child {
       margin-left: auto;
-
-      @include media("lg") {
-        margin-top: auto;
-      }
-    }
-
-    span {
-      display: block;
     }
   }
 
-  &__img {
+  &__right {
     position: absolute;
     top: 0;
     right: 0;
     display: flex;
     align-items: center;
     gap: 32px;
+
+    &-img {
+      overflow: hidden;
+    }
 
     img {
       width: 284px;
@@ -275,11 +271,7 @@ section {
       }
     }
 
-    div {
-      overflow: hidden;
-    }
-
-    div:nth-child(2) {
+    & > span:nth-child(2) {
       margin-left: 230px;
 
       @include media("lg") {
@@ -287,13 +279,8 @@ section {
       }
     }
 
-    div:nth-child(3) {
+    & > span:nth-child(3) {
       align-self: flex-end;
-    }
-
-    span {
-      text-transform: uppercase;
-      display: block;
     }
 
     strong {
@@ -328,13 +315,6 @@ section {
       width: 660px;
       height: 340px;
 
-      img {
-        width: 100%;
-        height: 100%;
-        max-height: 380px;
-        object-fit: cover;
-      }
-
       @include media("1380px") {
         width: 480px;
         height: 280px;
@@ -351,9 +331,7 @@ section {
       align-items: flex-start;
 
       img {
-        width: 100%;
         height: 290px;
-        object-fit: cover;
       }
 
       figcaption {
@@ -388,13 +366,27 @@ section {
 
         img {
           height: auto;
-          max-height: 340px;
         }
       }
       @include media("xs") {
         svg {
           width: 80px;
         }
+      }
+    }
+
+    &-img {
+      overflow: hidden;
+
+      @include media("lg") {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        max-height: 380px;
+        object-fit: cover;
       }
     }
   }
@@ -467,6 +459,7 @@ section {
     position: relative;
     width: 100%;
     height: 340px;
+    overflow: hidden;
 
     @include media("1380px") {
       margin-top: 60px;
@@ -656,7 +649,7 @@ section {
     width: 100%;
     max-width: 755px;
     height: 480px;
-    object-fit: cover;
+    overflow: hidden;
 
     @include media("1380px") {
       max-width: 480px;
@@ -664,6 +657,12 @@ section {
     }
     @include media("lg") {
       display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -685,14 +684,20 @@ section {
     margin-top: 32px;
     width: 100%;
     height: 430px;
-    object-fit: cover;
-    aspect-ratio: 16 / 9;
+    overflow: hidden;
 
     @include media("md") {
       height: auto;
     }
     @include media("sm") {
       margin-top: 24px;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
     }
   }
 }
@@ -746,6 +751,7 @@ section {
     right: 0;
     bottom: 0;
     width: 615px;
+    overflow: hidden;
 
     @include media("1380px") {
       width: 520px;
@@ -849,6 +855,7 @@ section {
 
   &__item {
     cursor: pointer;
+    overflow: hidden;
 
     @include nth(2) {
       grid-row-start: span 2;
@@ -902,9 +909,15 @@ section {
   &__item {
     &-img {
       width: 100%;
-      height: auto;
-      object-fit: cover;
-      aspect-ratio: 1/1;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        max-height: 320px;
+        object-fit: cover;
+        aspect-ratio: 1/1;
+      }
     }
 
     &-content {
@@ -1106,6 +1119,10 @@ section {
     align-items: flex-start;
     gap: 20px;
     z-index: 2;
+  }
+
+  &__img {
+    overflow: hidden;
   }
 
   &__list {
@@ -1395,6 +1412,7 @@ section {
 
     &-item {
       height: 450px;
+      overflow: hidden;
 
       @include media("1380px") {
         height: 350px;
@@ -1546,11 +1564,11 @@ section {
   padding-top: 0;
 
   .text-h2 {
-    @include media("1025px", min-width) {
-      font-size: 64px;
-    }
     @include media("769px", min-width) {
       font-size: 48px;
+    }
+    @include media("1025px", min-width) {
+      font-size: 64px;
     }
   }
 
@@ -1597,6 +1615,7 @@ section {
       width: 100%;
       max-width: 770px;
       height: 506px;
+      overflow: hidden;
 
       @include media("lg") {
         max-width: 100%;
@@ -1832,6 +1851,7 @@ section {
   &__img {
     width: 320px;
     height: 320px;
+    overflow: hidden;
 
     @include media("lg") {
       width: 100%;
@@ -2143,5 +2163,3 @@ section {
     }
   }
 }
-
-// @include show(".provide", true, true);

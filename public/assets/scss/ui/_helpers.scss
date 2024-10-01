@@ -121,3 +121,12 @@
     color: #878787;
   }
 }
+
+[data-animation] {
+  display: block;
+  overflow: hidden;
+
+  & > span {
+    display: block;
+  }
+}

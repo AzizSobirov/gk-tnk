@@ -10,12 +10,14 @@ import { TheFaq } from "@components";
     <Section name="intro">
       <div class="intro__content">
         <H1>
-          <div><span>ИНДИВИДУАЛЬНОЕ</span></div>
-          <div><span>СТРОИТЕЛЬСТВО</span></div>
+          <span>ИНДИВИДУАЛЬНОЕ</span>
+          <span>СТРОИТЕЛЬСТВО</span>
         </H1>
 
-        <figure class="intro__img">
-          <Image src="intro/1.png" />
+        <figure class="intro__right">
+          <div class="intro__right-img">
+            <Image src="intro/1.png" />
+          </div>
           <figcaption>
             Ваш новый уровень комфорта. Здесь начнётся Ваша новая история.
           </figcaption>
@@ -50,22 +52,20 @@ import { TheFaq } from "@components";
     <!-- Modern House -->
     <Section name="modern" main>
       <H2>
-        <div>
-          <span>СОВРЕМЕННЫЙ ДОМ</span>
-        </div>
-        <div>
-          <span>ДЛЯ <strong>УСПЕШНЫХ ЛЮДЕЙ</strong></span>
-        </div>
-        <div>
-          <span>ЦЕНЯЩИХ СВОё <strong>ВРЕМя</strong></span>
-        </div>
+        <span>СОВРЕМЕННЫЙ ДОМ</span>
+        <span>ДЛЯ <strong>УСПЕШНЫХ ЛЮДЕЙ</strong></span>
+        <span>ЦЕНЯЩИХ СВОё <strong>ВРЕМя</strong></span>
       </H2>
       <div class="modern__cards">
         <figure class="modern__card">
-          <Image src="modern/1.png" />
+          <div class="modern__card-img">
+            <Image src="modern/1.png" />
+          </div>
         </figure>
         <figure class="modern__card">
-          <Image src="modern/2.png" />
+          <div class="modern__card-img">
+            <Image src="modern/2.png" />
+          </div>
           <figcaption>
             <a href="/portfolio" data-cursor="link">
               <span>Смотреть портфолио</span>
@@ -112,7 +112,7 @@ import { TheFaq } from "@components";
       </div>
       <div class="professionals__img">
         <Image src="professionals.png" />
-        <a href="#" class="professionals__img-link" data-cursor="link">
+        <a href="/services" class="professionals__img-link" data-cursor="link">
           <span>Наши услуги </span>
           <svg
             width="241"
@@ -131,15 +131,9 @@ import { TheFaq } from "@components";
     <!-- Process -->
     <Section name="process">
       <H3>
-        <div>
-          <span>Мы делаем процесс</span>
-        </div>
-        <div>
-          <span>строительства вашего дома</span>
-        </div>
-        <div>
-          <span>прогнозируемым и понятным</span>
-        </div>
+        <span>Мы делаем процесс</span>
+        <span>строительства вашего дома</span>
+        <span>прогнозируемым и понятным</span>
       </H3>
       <ul class="process__list">
         <li class="process__item">
@@ -214,12 +208,8 @@ import { TheFaq } from "@components";
 
         <div class="know__text">
           <H2>
-            <div>
-              <span>мы знаем что </span>
-            </div>
-            <div>
-              <span>вам нужно</span>
-            </div>
+            <span>мы знаем что </span>
+            <span>вам нужно</span>
           </H2>
           <p class="know__text-desc">
             Спроектируем и построим дом Вашей мечты.
@@ -229,7 +219,9 @@ import { TheFaq } from "@components";
             <a href="#">Позвонить нам</a>
           </div>
         </div>
-        <Image src="we-know.png" class="know__img" />
+        <div class="know__img">
+          <Image src="we-know.png" />
+        </div>
       </div>
     </Section>
     <!-- Faq -->
